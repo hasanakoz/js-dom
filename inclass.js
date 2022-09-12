@@ -182,3 +182,27 @@ document.getElementById("btn").addEventListener("click", function () {
     : alert(`${input.value} entered`);
   input.value = "";
 });
+
+//_____birden fazla elemente event uygulama
+const list = document.querySelectorAll(".list");
+list.forEach((li) => {
+  li.style.transition = "all 1s";
+  li.style.lineHeight = "2rem";
+  li.onmouseover = () => {
+    li.style.fontSize = "2rem";
+    li.style.transform = "translateX(10px)";
+  };
+  li.onmouseout = () => {
+    li.style.fontSize = "1rem";
+    li.style.transform = "translateX(-10px)";
+  };
+});
+const print = () => {
+  console.log("Starting");
+};
+
+//______________on load___________
+
+window.onload = function () {
+  document.querySelector("#input").focus();
+};
